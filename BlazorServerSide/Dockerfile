@@ -7,8 +7,8 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
 COPY ["BlazorServerSide.csproj", "BlazorServerSide/"]
 RUN dotnet restore "BlazorServerSide/BlazorServerSide.csproj"
-COPY . .
 WORKDIR "/src/BlazorServerSide"
+COPY . .
 RUN dotnet build "BlazorServerSide.csproj" -c Release -o /app
 
 FROM build AS publish
