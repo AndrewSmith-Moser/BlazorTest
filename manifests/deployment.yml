@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: andrewsmithmoserblazortest 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: andrewsmithmoserblazortest 
+    spec:
+      containers:
+        - name: andrewsmithmoserblazortest 
+          image: moserandrewtest.azurecr.io/andrewsmithmoserblazortest 
+          ports:
+          - containerPort: 80
